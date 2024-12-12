@@ -6,14 +6,14 @@ app.use(express.static('public'));
 
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/index/index.html');
 })
 app.get('/session', (req, res) => {
     res.sendFile(__dirname + '/session.html');
 });
 
 app.get('/deploy', (req, res) => {
-    res.sendFile(__dirname + '/deploy.html');
+    res.sendFile(__dirname + '/deploy/deploy.html');
 });
 
 app.get('/support', (req, res) => {
