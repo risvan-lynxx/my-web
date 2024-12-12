@@ -4,7 +4,10 @@ const app = express();
 // Serve static HTML files from the public directory
 app.use(express.static('public'));
 
-// Route handling
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+})
 app.get('/session', (req, res) => {
     res.sendFile(__dirname + '/session.html');
 });
