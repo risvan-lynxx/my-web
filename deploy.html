@@ -2,16 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deploy</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <title>IZUMI Deploy</title>
+    <link rel="icon" href="https://i.imgur.com/R8ujokv.jpeg" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
+        @font-face {
+            font-family: 'thunder';
+            src: url('./assets/thunder.woff') format('woff2'),
+                 url('./assets/thunder.woff2') format('woff');
+        }
+
+        body {
+            user-select: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            margin: 0;
+            font-family: 'Bebas Neue', Arial, sans-serif;
+            background: #000000;
+            overflow: hidden;
+            color: #ffffff;
+        }
+
+        .large-title {
+            font-size: 85px;
+            margin: 2rem;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        .shadow__btn {
+            padding: 10px 20px;
+            border: none;
+            margin: .2rem;
+            font-size: 17px;
+            color: #000000;
+            border-radius: 7px;
+            font-family: 'thunder', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background: rgb(255, 255, 255);
+            box-shadow: 0 0 25px rgb(255, 255, 255);
+        }
+
+        .shadow__btn:hover {
+            box-shadow: 0 0 5px rgb(255, 192, 203),
+                        0 0 25px rgb(255, 192, 203),
+                        0 0 50px rgb(255, 192, 203),
+                        0 0 100px rgb(255, 192, 203);
+        }
+
+        .button-container {
+            opacity: 0;
+            animation: fadeIn 2s ease 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
     <h1 class="large-title">Deploy</h1>
-    
+    <h2 style="font-family: 'thunder', sans-serif; font-weight: 140; opacity: 0; animation: fadeIn 2s ease 0.5s forwards;">
+        Choose a deployment option
+    </h2>
     <div class="button-container">
-        <button type="button" onclick="window.location ='koyeb.com'" class="shadow__btn">Koyeb</button>
-        <button type="button" onclick="window.location ='render.com'" class="shadow__btn">Render</button>
+        <button type="button" onclick="window.location ='https://izumi-web.vercel.app/koyeb'" class="shadow__btn">Koyeb</button>
+        <button type="button" onclick="window.location ='https://render.com'" class="shadow__btn">Render</button>
+        <button type="button" onclick="window.location ='https://api.maskser.me/deploy'" class="shadow__btn">Heroku</button>
     </div>
 </body>
 </html>
